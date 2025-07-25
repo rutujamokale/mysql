@@ -1,7 +1,5 @@
  -- Creating a Stored Procedure for Applying a Discount Code
- desc orders;
- desc discount_codes;
- drop procedure ApplyDiscount;
+ 
  DELIMITER //
  
  CREATE PROCEDURE ApplyDiscount(
