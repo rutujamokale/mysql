@@ -1,4 +1,7 @@
- -- Creating a Stored Procedure for Applying a Discount C
+ -- Creating a Stored Procedure for Applying a Discount Code
+ desc orders;
+ desc discount_codes;
+ drop procedure ApplyDiscount;
  DELIMITER //
  
  CREATE PROCEDURE ApplyDiscount(
@@ -33,5 +36,6 @@
 
  END //
  
+ select *from discount_codes where code = 'INDEPENDENCE22 ';
  call ApplyDiscount(4, 'INDEPENDENCE22');
  
