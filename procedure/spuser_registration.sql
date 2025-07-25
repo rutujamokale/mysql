@@ -10,3 +10,4 @@ DELIMITER //
   
   
   END //
+  call UserRegistration('rutu','rutu@123','rutumokale2003','pune');
