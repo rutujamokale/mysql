@@ -1,0 +1,19 @@
+-- create procedure for monthlySalesReport
+DELIMITER //
+ CREATE PROCEDURE MonthlySalesReport(
+	IN p_year INT,
+    IN P_month INT
+ )	
+BEGIN
+	SELECT p.id AS product_id ,p.name AS product_name,
+    SUM(oi.quantity) AS total_quantity_sold ,
+    SUM(oi.quantity * price) AS total_sales
+    from orders o
+    JOIN order_items oi ON O.id=oi.order_id
+    JOIN products p ON oi.item_id=p.id
+    where YEAR(o.order_date)=p_year AND MONTH(o.order_date)=p_month
+    GROUP BY p.id,p.name;
+
+END //
+
+call MonthlySalesReport(2024,7);
