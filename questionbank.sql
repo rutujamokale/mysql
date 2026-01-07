@@ -52,6 +52,18 @@ qb.created_by="Sanika Bhor"
 and c.id=1
 and qb.difficulty_level="beginner";
 
+-- list all questions for level --
+select qb.title ,difficulty_level
+from questionbank qb
+where difficulty_level="Expert";
+
+-- list all questions for createdby and level
+
+select qb.title ,difficulty_level,created_by
+from questionbank qb
+where created_by="Sanika Bhor"
+and difficulty_level="advanced";
+
 
 
 
