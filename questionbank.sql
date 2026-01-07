@@ -64,6 +64,15 @@ from questionbank qb
 where created_by="Sanika Bhor"
 and difficulty_level="advanced";
 
+-- list all question  for concept and level --
+
+select qb.title , difficulty_level
+from questionbank qb 
+join  subject_concepts sc on sc.subject_concept_id=qb.subject_concept_id
+join concepts c on c.id= sc.concept_id
+and difficulty_level="beginner";
+
+
 
 
 
